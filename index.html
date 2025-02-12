@@ -11,6 +11,7 @@
             --secondary: #4F7A6A;
             --text: #422006;
             --accent: #34D399;
+            --card-bg: #FFFFFF;
         }
 
         * {
@@ -44,6 +45,11 @@
             color: var(--text);
         }
 
+        section {
+            margin: 4rem 0;
+            padding: 2rem 0;
+        }
+
         .social-icons {
             display: flex;
             justify-content: center;
@@ -67,80 +73,84 @@
             justify-content: center;
             gap: 2rem;
             margin: 3rem 0;
+            flex-wrap: wrap;
         }
 
         .stat-card {
-            background: white;
-            padding: 1rem 2rem;
+            background: var(--card-bg);
+            padding: 1.5rem 2.5rem;
             border-radius: 0.5rem;
             text-align: center;
-            border: 2px solid #422006;
+            border: 2px solid var(--text);
             position: relative;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            background: linear-gradient(45deg, #34D399, #059669);
-            border-radius: 0.7rem;
-            z-index: -1;
-        }
-
-        .stat-card h3 {
-            font-size: 1.5rem;
-            color: var(--text);
-            font-weight: bold;
+            min-width: 200px;
         }
 
         .about-section {
-            background: white;
-            border-radius: 2rem 2rem 0 0;
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .tokenomics-section {
+            background: var(--primary);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .tokenomics-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: inline-block;
+            min-width: 300px;
+        }
+
+        .how-to-buy {
+            background: var(--card-bg);
+            border-radius: 2rem;
             padding: 3rem 2rem;
             margin-top: 3rem;
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--text);
+        .step-card {
+            background: var(--primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 2px solid var(--text);
+        }
+
+        .coming-soon {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid var(--text);
         }
 
         .social-proof {
             background: var(--secondary);
-            padding: 3rem 1rem;
-            margin-top: 3rem;
+            padding: 4rem 2rem;
             text-align: center;
             color: white;
-        }
-
-        .social-proof h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding: 1rem;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
+            border-radius: 2rem 2rem 0 0;
         }
 
         .image-grid {
@@ -173,23 +183,19 @@
             transition: transform 0.2s;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
         }
 
-        .placeholder-img {
-            width: 300px;
-            height: 300px;
+        .disclaimer {
+            max-width: 800px;
             margin: 2rem auto;
-            position: relative;
-        }
-
-        .placeholder-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 1rem;
-            border: 4px solid var(--text);
+            font-size: 0.8rem;
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
@@ -198,7 +204,10 @@
                 align-items: center;
             }
             .stat-card {
-                width: 80%;
+                width: 100%;
+            }
+            .steps-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -208,15 +217,9 @@
         <header class="header">
             <h1>MUFFIN THE PUP</h1>
             <div class="social-icons">
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="TikTok">
-                </div>
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="Instagram">
-                </div>
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="Twitter">
-                </div>
+                <div class="social-icon"><img src="/api/placeholder/24/24" alt="Twitter"></div>
+                <div class="social-icon"><img src="/api/placeholder/24/24" alt="Telegram"></div>
+                <div class="social-icon"><img src="/api/placeholder/24/24" alt="Discord"></div>
             </div>
         </header>
 
@@ -236,18 +239,61 @@
         </div>
 
         <section class="about-section">
-            <div class="about-content">
-                <h2>ABOUT MUFFIN</h2>
-                <div class="placeholder-img">
-                    <img src="/api/placeholder/300/300" alt="Muffin the Pup">
+            <h2>ABOUT MUFFIN</h2>
+            <div style="margin: 2rem 0;">
+                <img src="/api/placeholder/300/300" alt="Muffin the Pup" style="border-radius: 1rem;">
+            </div>
+            <p style="max-width: 600px; margin: 0 auto;">
+                In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
+                there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
+                big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
+                all things delicious!
+            </p>
+        </section>
+
+        <section class="tokenomics-section">
+            <h2>TOKENOMICS</h2>
+            <p>Our tokenomics are simple - Sweet Pup Economics!</p>
+            <div class="tokenomics-card">
+                <h3>Total Supply</h3>
+                <p>1,000,000,000,000</p>
+                <h3>Contract Address</h3>
+                <p style="word-break: break-all;">0x123...abc</p>
+            </div>
+        </section>
+
+        <section class="how-to-buy">
+            <h2>HOW TO BUY</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3>1) Create a Wallet</h3>
+                    <p>Download Phantom Wallet and create an account</p>
                 </div>
-                <p>
-                    In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
-                    there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
-                    big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
-                    all things delicious!
-                </p>
-                <button class="cta-button">Join Muffin's Bakery Club!</button>
+                <div class="step-card">
+                    <h3>2) Get Some SOL</h3>
+                    <p>Buy SOL from your favorite exchange</p>
+                </div>
+                <div class="step-card">
+                    <h3>3) Swap for $MUFFIN</h3>
+                    <p>Use Jupiter or Raydium to swap SOL for $MUFFIN</p>
+                </div>
+                <div class="step-card">
+                    <h3>4) Welcome to the Bakery!</h3>
+                    <p>You're now part of Muffin's sweet family!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="coming-soon">
+            <div class="feature-card">
+                <h3>COMING SOON</h3>
+                <p>Something sweet is baking!</p>
+                <button class="cta-button">Coming Soon!</button>
+            </div>
+            <div class="feature-card">
+                <h3>MUFFIN-PFP</h3>
+                <p>Create & set your own Muffin PFP!</p>
+                <button class="cta-button">Make PFP!</button>
             </div>
         </section>
 
@@ -263,6 +309,19 @@
             </div>
         </section>
     </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <div class="social-icon"><img src="/api/placeholder/24/24" alt="Twitter"></div>
+            <div class="social-icon"><img src="/api/placeholder/24/24" alt="Telegram"></div>
+            <div class="social-icon"><img src="/api/placeholder/24/24" alt="Discord"></div>
+        </div>
+        <div class="disclaimer">
+            All information presented by the $MUFFIN token on its website and/or related social media platforms 
+            is not affiliated with, endorsed, or supported by any entity. This token is a community-driven meme token 
+            for entertainment purposes only.
+        </div>
+    </footer>
 
     <script>
         gsap.from(".stat-card", {
