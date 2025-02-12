@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muffin the Pup - The Sweetest Dog on the Block!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <style>
+        :root {
+            --primary: #FBF7F4;
+            --secondary: #F4D03F;
+            --text: #5D4037;
+            --accent: #F8BBD0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(45deg, #FFE0B2, #FFCCBC);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 4rem 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .placeholder-img {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .stats {
+                gap: 1rem;
+            }
+            .stat-card {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>MUFFIN THE PUP</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">The Sweetest Dog on the Block! 🧁</p>
+        <div class="placeholder-img">
+            <img src="/api/placeholder/300/300" alt="Muffin the Pup" style="border-radius: 50%;">
+        </div>
+        <a href="#about" class="cta-button">Meet Muffin!</a>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3>1M+</h3>
+            <p>TikTok Followers</p>
+        </div>
+        <div class="stat-card">
+            <h3>500K</h3>
+            <p>Instagram Fans</p>
+        </div>
+        <div class="stat-card">
+            <h3>10K+</h3>
+            <p>Cupcakes Tasted</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Muffin</h2>
+        <p>
+            In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
+            there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
+            big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
+            all things delicious!
+        </p>
+        <p>
+            Muffin's Rules of Life:
+            <br>• Never say no to a warm muffin—it's basically a hug in food form!
+            <br>• If life gets messy, just lick the frosting off and keep going.
+            <br>• Home is wherever there's fresh-baked goodness (and belly rubs).
+        </p>
+        <div class="socials">
+            <a href="#" class="social-icon">
+                <img src="/api/placeholder/24/24" alt="TikTok">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="/api/placeholder/24/24" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="/api/placeholder/24/24" alt="Twitter">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for stats counting up
+        gsap.from(".stat-card h3", {
+            scrollTrigger: ".stats",
+            textContent: 0,
+            duration: 2,
+            ease: "power1.out",
+            snap: { textContent: 1 },
+            stagger: 0.25
+        });
+    </script>
+</body>
+</html>
