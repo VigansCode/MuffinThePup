@@ -100,13 +100,24 @@
             text-align: center;
         }
 
-        .tokenomics-card {
+        .tokenomics-content {
             background: var(--card-bg);
             border-radius: 1rem;
             padding: 2rem;
             margin-top: 2rem;
-            display: inline-block;
-            min-width: 300px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .tokenomics-img {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .tokenomics-details {
+            flex: 2;
         }
 
         .how-to-buy {
@@ -114,6 +125,7 @@
             border-radius: 2rem;
             padding: 3rem 2rem;
             margin-top: 3rem;
+            text-align: center;
         }
 
         .steps-container {
@@ -209,6 +221,10 @@
             .steps-container {
                 grid-template-columns: 1fr;
             }
+            .tokenomics-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -254,11 +270,16 @@
         <section class="tokenomics-section">
             <h2>TOKENOMICS</h2>
             <p>Our tokenomics are simple - Sweet Pup Economics!</p>
-            <div class="tokenomics-card">
-                <h3>Total Supply</h3>
-                <p>1,000,000,000,000</p>
-                <h3>Contract Address</h3>
-                <p style="word-break: break-all;">0x123...abc</p>
+            <div class="tokenomics-content">
+                <div class="tokenomics-img">
+                    <img src="/muffin.png" alt="Muffin with Treats" style="width: 100%; height: auto;">
+                </div>
+                <div class="tokenomics-details">
+                    <h3>Total Supply</h3>
+                    <p>1,000,000,000,000</p>
+                    <h3>Contract Address</h3>
+                    <p style="word-break: break-all;">0x123...abc</p>
+                </div>
             </div>
         </section>
 
