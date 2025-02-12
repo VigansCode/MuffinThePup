@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muffin the Pup - The Sweetest Dog on the Block!</title>
+    <title>Muffin the Pup - The Sweetest Meme Dog!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <style>
         :root {
-            --primary: #FBF7F4;
-            --secondary: #F4D03F;
-            --text: #5D4037;
-            --accent: #F8BBD0;
+            --primary: #FFE4E6;
+            --secondary: #4F7A6A;
+            --text: #422006;
+            --accent: #34D399;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
         }
 
         body {
@@ -26,100 +26,151 @@
             line-height: 1.6;
         }
 
-        .hero {
-            background: linear-gradient(45deg, #FFE0B2, #FFCCBC);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header {
             padding: 2rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
-        .hero h1 {
-            font-size: 4rem;
+        .header h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
             color: var(--text);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .stats {
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            background: #1F2937;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stats-container {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
-            padding: 4rem 2rem;
+            margin: 3rem 0;
         }
 
         .stat-card {
             background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
             text-align: center;
-            min-width: 200px;
+            border: 2px solid #422006;
+            position: relative;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #34D399, #059669);
+            border-radius: 0.7rem;
+            z-index: -1;
         }
 
         .stat-card h3 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--text);
+            font-weight: bold;
         }
 
-        .about {
-            padding: 4rem 2rem;
+        .about-section {
+            background: white;
+            border-radius: 2rem 2rem 0 0;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about h2 {
+        .about-content h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: var(--text);
         }
 
-        .about p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+        .social-proof {
+            background: var(--secondary);
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: white;
         }
 
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        .social-proof h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
             margin-top: 2rem;
         }
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
+        .image-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 3px solid white;
         }
 
         .cta-button {
-            background: var(--secondary);
-            color: var(--text);
+            background: var(--accent);
+            color: white;
             padding: 1rem 2rem;
             border-radius: 2rem;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
-            margin-top: 2rem;
             display: inline-block;
-            transition: transform 0.3s ease;
+            margin-top: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
         .cta-button:hover {
@@ -129,100 +180,101 @@
         .placeholder-img {
             width: 300px;
             height: 300px;
-            background: var(--accent);
-            border-radius: 50%;
             margin: 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: white;
+            position: relative;
+        }
+
+        .placeholder-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 4px solid var(--text);
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .stats {
-                gap: 1rem;
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
             }
             .stat-card {
-                min-width: 150px;
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <h1>MUFFIN THE PUP</h1>
-        <p style="font-size: 1.5rem; margin-bottom: 2rem;">The Sweetest Dog on the Block! 🧁</p>
-        <div class="placeholder-img">
-            <img src="/api/placeholder/300/300" alt="Muffin the Pup" style="border-radius: 50%;">
-        </div>
-        <a href="#about" class="cta-button">Meet Muffin!</a>
-    </section>
+    <div class="container">
+        <header class="header">
+            <h1>MUFFIN THE PUP</h1>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="TikTok">
+                </div>
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="Instagram">
+                </div>
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="Twitter">
+                </div>
+            </div>
+        </header>
 
-    <section class="stats">
-        <div class="stat-card">
-            <h3>1M+</h3>
-            <p>TikTok Followers</p>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>1B+</h3>
+                <p>VIEWS</p>
+            </div>
+            <div class="stat-card">
+                <h3>1M+</h3>
+                <p>FANS</p>
+            </div>
+            <div class="stat-card">
+                <h3>10K+</h3>
+                <p>TREATS TESTED</p>
+            </div>
         </div>
-        <div class="stat-card">
-            <h3>500K</h3>
-            <p>Instagram Fans</p>
-        </div>
-        <div class="stat-card">
-            <h3>10K+</h3>
-            <p>Cupcakes Tasted</p>
-        </div>
-    </section>
 
-    <section id="about" class="about">
-        <h2>About Muffin</h2>
-        <p>
-            In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
-            there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
-            big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
-            all things delicious!
-        </p>
-        <p>
-            Muffin's Rules of Life:
-            <br>• Never say no to a warm muffin—it's basically a hug in food form!
-            <br>• If life gets messy, just lick the frosting off and keep going.
-            <br>• Home is wherever there's fresh-baked goodness (and belly rubs).
-        </p>
-        <div class="socials">
-            <a href="#" class="social-icon">
-                <img src="/api/placeholder/24/24" alt="TikTok">
-            </a>
-            <a href="#" class="social-icon">
-                <img src="/api/placeholder/24/24" alt="Instagram">
-            </a>
-            <a href="#" class="social-icon">
-                <img src="/api/placeholder/24/24" alt="Twitter">
-            </a>
-        </div>
-    </section>
+        <section class="about-section">
+            <div class="about-content">
+                <h2>ABOUT MUFFIN</h2>
+                <div class="placeholder-img">
+                    <img src="/api/placeholder/300/300" alt="Muffin the Pup">
+                </div>
+                <p>
+                    In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
+                    there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
+                    big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
+                    all things delicious!
+                </p>
+                <button class="cta-button">Join Muffin's Bakery Club!</button>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <h2>LOVED BY MILLIONS</h2>
+            <div class="image-grid">
+                <img src="/api/placeholder/150/150" alt="Social Proof 1">
+                <img src="/api/placeholder/150/150" alt="Social Proof 2">
+                <img src="/api/placeholder/150/150" alt="Social Proof 3">
+                <img src="/api/placeholder/150/150" alt="Social Proof 4">
+                <img src="/api/placeholder/150/150" alt="Social Proof 5">
+                <img src="/api/placeholder/150/150" alt="Social Proof 6">
+            </div>
+        </section>
+    </div>
 
     <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animation for stats counting up
-        gsap.from(".stat-card h3", {
-            scrollTrigger: ".stats",
-            textContent: 0,
-            duration: 2,
-            ease: "power1.out",
-            snap: { textContent: 1 },
-            stagger: 0.25
+        gsap.from(".stat-card", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".stats-container",
+                start: "top center"
+            }
         });
     </script>
 </body>
