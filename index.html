@@ -34,7 +34,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #FFE4E6 0%, #FFE8EA 100%);
+            background-color: var(--primary);
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
@@ -57,7 +57,7 @@
             font-size: 4.5rem;
             margin-bottom: 1.5rem;
             color: var(--text);
-            text-shadow: 4px 4px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .social-icons {
@@ -91,22 +91,20 @@
             flex-wrap: wrap;
         }
 
-        .stat-card, .feature-card, .tokenomics-card {
-            background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
-            border: 3px solid var(--text);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-            border-radius: 1rem;
+        .stat-card {
+            background: var(--card-bg);
             padding: 2rem 3rem;
+            border-radius: 1rem;
             text-align: center;
+            border: 3px solid var(--text);
             position: relative;
             min-width: 200px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
         }
 
-        .stat-card:hover, .feature-card:hover, .tokenomics-card:hover {
+        .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 8px 8px 0px rgba(66, 32, 6, 0.2);
         }
 
         .stat-card h3 {
@@ -122,14 +120,13 @@
             font-weight: 500;
         }
 
-        .about-section, .how-to-buy {
+        .about-section {
             background: var(--card-bg);
-            border: 3px solid var(--text);
-            box-shadow: 8px 8px 0px rgba(66, 32, 6, 0.2);
             border-radius: 2rem;
             padding: 4rem 2rem;
             margin-top: 3rem;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
         }
 
         .about-section h2 {
@@ -137,7 +134,7 @@
             font-size: 3.2rem;
             color: var(--text);
             margin-bottom: 2rem;
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .about-section p {
@@ -160,14 +157,18 @@
             font-size: 3.2rem;
             color: var(--text);
             margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .tokenomics-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
             padding: 2rem;
             margin-top: 2rem;
             display: inline-block;
             min-width: 300px;
+            border: 3px solid var(--text);
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
         }
 
         .tokenomics-card h3 {
@@ -184,13 +185,21 @@
             color: var(--text);
         }
 
+        .how-to-buy {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
+        }
+
         .how-to-buy h2 {
             font-family: var(--heading-font);
             font-size: 3.2rem;
             text-align: center;
             margin-bottom: 2rem;
             color: var(--text);
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .steps-container {
@@ -205,13 +214,12 @@
             border-radius: 1rem;
             padding: 1.5rem;
             border: 3px solid var(--text);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
         }
 
         .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 8px 8px 0px rgba(66, 32, 6, 0.2);
         }
 
         .step-card h3 {
@@ -232,6 +240,20 @@
             margin-top: 3rem;
         }
 
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--text);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 32, 6, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
         .feature-card h3 {
             font-family: var(--heading-font);
             font-size: 1.8rem;
@@ -240,21 +262,19 @@
         }
 
         .social-proof {
-            background: linear-gradient(180deg, var(--secondary) 0%, #3D5D4F 100%);
+            background: var(--secondary);
             padding: 4rem 2rem;
             text-align: center;
             color: white;
             border-radius: 2rem 2rem 0 0;
             margin-top: 3rem;
-            border: 3px solid var(--text);
-            border-bottom: none;
         }
 
         .social-proof h2 {
             font-family: var(--heading-font);
             font-size: 3.2rem;
             margin-bottom: 2rem;
-            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .image-grid {
@@ -280,22 +300,21 @@
         .cta-button {
             background: var(--accent);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 2rem;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
             display: inline-block;
             margin-top: 2rem;
-            border: 3px solid #2B9C72;
-            box-shadow: 4px 4px 0px #2B9C72;
+            border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
         }
 
         .cta-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #2B9C72;
+            transform: scale(1.05);
         }
 
         .footer {
@@ -304,7 +323,6 @@
             padding: 2rem;
             text-align: center;
             font-size: 0.9rem;
-            border-top: 3px solid var(--text);
         }
 
         .disclaimer {
