@@ -6,35 +6,40 @@
     <title>Muffin the Pup - The Sweetest Meme Dog!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <style>
-@font-face {
-    font-family: 'Copyduck';
-    src: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/Copyduck.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-        
-        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+    @font-face {
+        font-family: 'Copyduck';
+        src: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/Copyduck.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-        :root {
-            --primary: #FFE4E6;
-            --secondary: #4F7A6A;
-            --text: #422006;
-            --accent: #34D399;
-            --card-bg: #FFFFFF;
-            --heading-font: 'Copyduck', cursive;
-            --body-font: 'Varela Round', sans-serif;
-        }
+    :root {
+        --primary: #FFE4E6;
+        --secondary: #4F7A6A;
+        --text: #422006;
+        --accent: #34D399;
+        --card-bg: #FFFFFF;
+        --heading-font: 'Copyduck', cursive;
+        --body-font: 'Varela Round', sans-serif;
+    }
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--body-font);
+    }
+
+    html {
+        height: 100%;
     }
 
     body {
-        background-color: var(--primary);
+        background: linear-gradient(135deg, #FFE4E6 0%, #FFD1D6 100%);
+        min-height: 100vh;
         color: var(--text);
         line-height: 1.6;
     }
@@ -52,7 +57,7 @@
     }
 
     .header h1 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 4.5rem;
         margin-bottom: 1.5rem;
         color: var(--text);
@@ -106,7 +111,7 @@
     }
 
     .stat-card h3 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 3rem;
         color: var(--text);
         margin-bottom: 0.5rem;
@@ -128,7 +133,7 @@
     }
 
     .about-section h2 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 3.2rem;
         color: var(--text);
         margin-bottom: 2rem;
@@ -152,7 +157,7 @@
     }
 
     .tokenomics-section h2 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 3.2rem;
         color: var(--text);
         margin-bottom: 1.5rem;
@@ -170,7 +175,7 @@
     }
 
     .tokenomics-card h3 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
@@ -189,7 +194,7 @@
     }
 
     .how-to-buy h2 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 3.2rem;
         text-align: center;
         margin-bottom: 2rem;
@@ -217,7 +222,7 @@
     }
 
     .step-card h3 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
@@ -243,7 +248,7 @@
     }
 
     .feature-card h3 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
@@ -258,7 +263,7 @@
     }
 
     .social-proof h2 {
-        font-family: 'Copyduck', sans-serif !important;
+        font-family: var(--heading-font);
         font-size: 3.2rem;
         margin-bottom: 2rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
