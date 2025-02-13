@@ -100,24 +100,13 @@
             text-align: center;
         }
 
-        .tokenomics-content {
+        .tokenomics-card {
             background: var(--card-bg);
             border-radius: 1rem;
             padding: 2rem;
             margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            text-align: left;
-        }
-
-        .tokenomics-img {
-            flex: 1;
-            max-width: 300px;
-        }
-
-        .tokenomics-details {
-            flex: 2;
+            display: inline-block;
+            min-width: 300px;
         }
 
         .how-to-buy {
@@ -125,7 +114,6 @@
             border-radius: 2rem;
             padding: 3rem 2rem;
             margin-top: 3rem;
-            text-align: center;
         }
 
         .steps-container {
@@ -221,10 +209,6 @@
             .steps-container {
                 grid-template-columns: 1fr;
             }
-            .tokenomics-content {
-                flex-direction: column;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -257,7 +241,7 @@
         <section class="about-section">
             <h2>ABOUT MUFFIN</h2>
             <div style="margin: 2rem 0;">
-                <img src="/muffin.png" alt="Muffin the Pup" style="width: 300px; height: 300px; border-radius: 1rem; object-fit: contain;">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Public/muffin.png" alt="Muffin the Pup" style="width: 300px; height: 300px; border-radius: 1rem; object-fit: contain;">
             </div>
             <p style="max-width: 600px; margin: 0 auto;">
                 In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
@@ -270,16 +254,11 @@
         <section class="tokenomics-section">
             <h2>TOKENOMICS</h2>
             <p>Our tokenomics are simple - Sweet Pup Economics!</p>
-            <div class="tokenomics-content">
-                <div class="tokenomics-img">
-                    <img src="/muffin.png" alt="Muffin with Treats" style="width: 100%; height: auto;">
-                </div>
-                <div class="tokenomics-details">
-                    <h3>Total Supply</h3>
-                    <p>1,000,000,000,000</p>
-                    <h3>Contract Address</h3>
-                    <p style="word-break: break-all;">0x123...abc</p>
-                </div>
+            <div class="tokenomics-card">
+                <h3>Total Supply</h3>
+                <p>1,000,000,000,000</p>
+                <h3>Contract Address</h3>
+                <p style="word-break: break-all;">0x123...abc</p>
             </div>
         </section>
 
