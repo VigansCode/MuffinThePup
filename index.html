@@ -6,350 +6,369 @@
     <title>Muffin the Pup - The Sweetest Meme Dog!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <style>
-    @font-face {
-        font-family: 'Copyduck';
-        src: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/Copyduck.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-    
-    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        @font-face {
+            font-family: 'Copyduck';
+            src: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/Copyduck.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-    :root {
-        --primary: #FFE4E6;
-        --secondary: #4F7A6A;
-        --text: #422006;
-        --accent: #34D399;
-        --card-bg: #FFFFFF;
-        --heading-font: 'Copyduck', cursive;
-        --body-font: 'Varela Round', sans-serif;
-    }
+        :root {
+            --primary: #FFE4E6;
+            --secondary: #4F7A6A;
+            --text: #422006;
+            --accent: #34D399;
+            --card-bg: #FFFFFF;
+            --heading-font: 'Copyduck', cursive;
+            --body-font: 'Varela Round', sans-serif;
+        }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: var(--body-font);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--body-font);
+        }
 
-    html {
-        height: 100%;
-    }
+        html {
+            height: 100%;
+        }
 
-    body {
-        background: linear-gradient(135deg, #FFE4E6 0%, #FFD1D6 100%);
-        min-height: 100vh;
-        color: var(--text);
-        line-height: 1.6;
-    }
+        body {
+            background: linear-gradient(135deg, #FFE4E6 0%, #FFD1D6 50%, #FFE4E6 100%);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
 
-    .header {
-        padding: 2rem;
-        text-align: center;
-        position: relative;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    .header h1 {
-        font-family: var(--heading-font);
-        font-size: 4.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--text);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
+        .header {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .social-icon {
-        background: #1F2937;
-        border-radius: 0.5rem;
-        padding: 0.75rem;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .social-icon:hover {
-        transform: scale(1.1);
-    }
-
-    .stats-container {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 3rem 0;
-        flex-wrap: wrap;
-    }
-
-    .stat-card {
-        background: var(--card-bg);
-        padding: 2rem 3rem;
-        border-radius: 1rem;
-        text-align: center;
-        border: 3px solid var(--text);
-        position: relative;
-        min-width: 200px;
-        transition: transform 0.3s ease;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .stat-card h3 {
-        font-family: var(--heading-font);
-        font-size: 3rem;
-        color: var(--text);
-        margin-bottom: 0.5rem;
-    }
-
-    .stat-card p {
-        font-size: 1.2rem;
-        color: var(--text);
-        font-weight: 500;
-    }
-
-    .about-section {
-        background: var(--card-bg);
-        border-radius: 2rem;
-        padding: 4rem 2rem;
-        margin-top: 3rem;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .about-section h2 {
-        font-family: var(--heading-font);
-        font-size: 3.2rem;
-        color: var(--text);
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-section p {
-        font-size: 1.25rem;
-        line-height: 1.8;
-        max-width: 800px;
-        margin: 2rem auto;
-        color: var(--text);
-        font-weight: 500;
-        letter-spacing: 0.015em;
-    }
-
-    .tokenomics-section {
-        background: var(--primary);
-        padding: 4rem 2rem;
-        text-align: center;
-    }
-
-    .tokenomics-section h2 {
-        font-family: var(--heading-font);
-        font-size: 3.2rem;
-        color: var(--text);
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .tokenomics-card {
-        background: var(--card-bg);
-        border-radius: 1rem;
-        padding: 2rem;
-        margin-top: 2rem;
-        display: inline-block;
-        min-width: 300px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .tokenomics-card h3 {
-        font-family: var(--heading-font);
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .tokenomics-card p {
-        font-size: 1.2rem;
-        margin: 1rem 0;
-        font-weight: 500;
-    }
-
-    .how-to-buy {
-        background: var(--card-bg);
-        border-radius: 2rem;
-        padding: 3rem 2rem;
-        margin-top: 3rem;
-    }
-
-    .how-to-buy h2 {
-        font-family: var(--heading-font);
-        font-size: 3.2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: var(--text);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .steps-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .step-card {
-        background: var(--primary);
-        border-radius: 1rem;
-        padding: 1.5rem;
-        border: 2px solid var(--text);
-        transition: transform 0.3s ease;
-    }
-
-    .step-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .step-card h3 {
-        font-family: var(--heading-font);
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .coming-soon {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .feature-card {
-        background: var(--card-bg);
-        border-radius: 1rem;
-        padding: 2rem;
-        text-align: center;
-        border: 2px solid var(--text);
-        transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .feature-card h3 {
-        font-family: var(--heading-font);
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .social-proof {
-        background: var(--secondary);
-        padding: 4rem 2rem;
-        text-align: center;
-        color: white;
-        border-radius: 2rem 2rem 0 0;
-        margin-top: 3rem;
-    }
-
-    .social-proof h2 {
-        font-family: var(--heading-font);
-        font-size: 3.2rem;
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-
-    .image-grid img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 1rem;
-        border: 3px solid white;
-        transition: transform 0.3s ease;
-    }
-
-    .image-grid img:hover {
-        transform: scale(1.05);
-    }
-
-    .cta-button {
-        background: var(--accent);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2rem;
-        display: inline-block;
-        margin-top: 2rem;
-        border: none;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .cta-button:hover {
-        transform: scale(1.05);
-    }
-
-    .footer {
-        background: var(--secondary);
-        color: white;
-        padding: 2rem;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    .disclaimer {
-        max-width: 800px;
-        margin: 2rem auto;
-        font-size: 0.9rem;
-        opacity: 0.8;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
         .header h1 {
-            font-size: 3.5rem;
+            font-family: var(--heading-font);
+            font-size: 5.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.2);
+            letter-spacing: 2px;
+            animation: float 6s ease-in-out infinite;
         }
-        
-        .stats-container {
-            flex-direction: column;
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            background: #1F2937;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
         }
-        
-        .stat-card {
-            width: 100%;
+
+        .social-icon:hover {
+            transform: scale(1.1);
         }
-        
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-card, .tokenomics-card, .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 8px 8px 20px rgba(66, 32, 6, 0.1);
+            border: 3px solid var(--text);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border-radius: 1rem;
+            padding: 2rem 3rem;
+            text-align: center;
+            position: relative;
+            min-width: 200px;
+        }
+
+        .stat-card:hover, .tokenomics-card:hover, .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 12px 12px 30px rgba(66, 32, 6, 0.15);
+        }
+
+        .stat-card h3 {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0px rgba(66, 32, 6, 0.1);
+        }
+
+        .stat-card p {
+            font-size: 1.2rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .about-section {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-section h2 {
+            font-family: var(--heading-font);
+            font-size: 3.2rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.2);
+        }
+
+        .about-section p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 2rem auto;
+            color: var(--text);
+            font-weight: 500;
+            letter-spacing: 0.015em;
+        }
+
+        .tokenomics-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .tokenomics-section h2 {
+            font-family: var(--heading-font);
+            font-size: 3.2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.2);
+        }
+
+        .how-to-buy {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .how-to-buy h2 {
+            font-family: var(--heading-font);
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text);
+            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.2);
+        }
+
         .steps-container {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-        
-        .about-section h2,
-        .tokenomics-section h2,
-        .how-to-buy h2,
+
+        .step-card {
+            background: rgba(255, 232, 234, 0.9);
+            border: 3px solid var(--text);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .step-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover h3::after {
+            transform: scaleX(1);
+        }
+
+        .coming-soon {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-proof {
+            background: linear-gradient(180deg, var(--secondary) 0%, #3D5D4F 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #34D399, #FFD1D6, #34D399);
+            background-size: 200% 100%;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% 0; }
+        }
+
         .social-proof h2 {
-            font-size: 2.8rem;
+            font-family: var(--heading-font);
+            font-size: 3.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-    }
-</style>
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #34D399, #3CD590);
+            color: white;
+            padding: 1.2rem 2.4rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-family: var(--heading-font);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(52, 211, 153, 0.6);
+        }
+
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 2rem auto;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-card {
+                width: 100%;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-section h2,
+            .tokenomics-section h2,
+            .how-to-buy h2,
+            .social-proof h2 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
