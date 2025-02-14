@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muffin the Pup - The Sweetest Meme Dog!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <style>
         @font-face {
             font-family: 'Copyduck';
@@ -33,17 +34,28 @@
             font-family: var(--body-font);
         }
 
-        body {
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-            position: relative;
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/forest1.png') no-repeat center center fixed;
-            background-size: cover;
+        /* Background wrapper for parallax effect */
+        .background-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
         }
 
-        body::before {
-            content: '';
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/forest1.png') no-repeat center center;
+            background-size: cover;
+            transform: scale(1.1);
+        }
+
+        /* White overlay */
+        .background-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -51,6 +63,13 @@
             height: 100%;
             background: rgba(255, 255, 255, 0.9);
             z-index: -1;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
         }
 
         .container {
@@ -67,6 +86,7 @@
             position: relative;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 0 0 2rem 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .header h1 {
@@ -118,6 +138,7 @@
             min-width: 200px;
             transition: transform 0.3s ease;
             box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .stat-card:hover {
@@ -157,6 +178,7 @@
             background: rgba(255, 255, 255, 0.9);
             z-index: 1;
             border-radius: 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .about-section > * {
@@ -202,6 +224,7 @@
             background: rgba(255, 255, 255, 0.9);
             z-index: 1;
             border-radius: 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .tokenomics-section > * {
@@ -226,6 +249,7 @@
             min-width: 300px;
             border: 3px solid var(--text);
             box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .tokenomics-card h3 {
@@ -261,6 +285,7 @@
             background: rgba(255, 255, 255, 0.9);
             z-index: 1;
             border-radius: 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .how-to-buy > * {
@@ -291,6 +316,7 @@
             border: 3px solid var(--text);
             transition: transform 0.3s ease;
             box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .step-card:hover {
@@ -319,6 +345,7 @@
             border: 3px solid var(--text);
             transition: transform 0.3s ease;
             box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
@@ -543,7 +570,12 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script>
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Stat cards animation
         gsap.from(".stat-card", {
             y: 50,
             opacity: 0,
@@ -553,6 +585,18 @@
             scrollTrigger: {
                 trigger: ".stats-container",
                 start: "top center"
+            }
+        });
+
+        // Background parallax effect
+        gsap.to(".background-image", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
             }
         });
     </script>
