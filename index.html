@@ -628,15 +628,17 @@ body {
     const bg2 = document.querySelector('.background-section-2');
     const bg3 = document.querySelector('.background-section-3');
 
-    // Create overlapping transition zones
-    if (percentage < 40) {
-        bg1.style.opacity = 1 - (percentage / 40);  // Gradually fade out
-        bg2.style.opacity = percentage / 40;        // Gradually fade in
+    // Create wider overlapping transition zones
+    if (percentage < 50) {
+        // Slower fade for first transition
+        bg1.style.opacity = Math.cos((percentage / 50) * (Math.PI / 2)); // Cosine function for smoother fade
+        bg2.style.opacity = Math.sin((percentage / 50) * (Math.PI / 2)); // Sine function for smoother fade
         bg3.style.opacity = '0';
-    } else if (percentage < 80) {
+    } else if (percentage < 100) {
+        // Slower fade for second transition
         bg1.style.opacity = '0';
-        bg2.style.opacity = 1 - ((percentage - 40) / 40);  // Gradually fade out
-        bg3.style.opacity = (percentage - 40) / 40;        // Gradually fade in
+        bg2.style.opacity = Math.cos(((percentage - 50) / 50) * (Math.PI / 2));
+        bg3.style.opacity = Math.sin(((percentage - 50) / 50) * (Math.PI / 2));
     } else {
         bg1.style.opacity = '0';
         bg2.style.opacity = '0';
