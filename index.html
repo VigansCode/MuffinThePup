@@ -66,37 +66,43 @@
         }
 
         .background-section-1 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -3;
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -4;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
 
-        .background-section-2 {
-            position: fixed;
-            top: 100vh;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -3;
-        }
+.background-section-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -4;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-        .background-section-3 {
-            position: fixed;
-            top: 200vh;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -3;
-        }
+.background-section-3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -4;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
         body {
             color: var(--text);
@@ -621,16 +627,63 @@
                 start: "top center"
             }
         });
-
-        // Background parallax effect
-        gsap.to(".background-image", {
+    
+        // Background parallax effects for all three sections
+        gsap.to(".background-section-1", {
             yPercent: 20,
             ease: "none",
             scrollTrigger: {
                 trigger: "body",
                 start: "top top",
+                end: "33% top",
+                scrub: true
+            }
+        });
+    
+        gsap.to(".background-section-2", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "33% top",
+                end: "66% top",
+                scrub: true
+            }
+        });
+    
+        gsap.to(".background-section-3", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "66% top",
                 end: "bottom top",
                 scrub: true
+            }
+        });
+
+        // Add scroll listener for background transitions
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const percentage = (scrolled / height) * 100;
+
+            const bg1 = document.querySelector('.background-section-1');
+            const bg2 = document.querySelector('.background-section-2');
+            const bg3 = document.querySelector('.background-section-3');
+
+            if (percentage < 33) {
+                bg1.style.opacity = '1';
+                bg2.style.opacity = '0';
+                bg3.style.opacity = '0';
+            } else if (percentage < 66) {
+                bg1.style.opacity = '0';
+                bg2.style.opacity = '1';
+                bg3.style.opacity = '0';
+            } else {
+                bg1.style.opacity = '0';
+                bg2.style.opacity = '0';
+                bg3.style.opacity = '1';
             }
         });
     </script>
