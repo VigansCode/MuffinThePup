@@ -57,7 +57,7 @@
             font-size: 4.5rem;
             margin-bottom: 1.5rem;
             color: var(--text);
-            text-shadow: 4px 4px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .social-icons {
@@ -105,7 +105,6 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
         }
 
         .stat-card h3 {
@@ -122,13 +121,31 @@
         }
 
         .about-section {
-            background: var(--card-bg);
+            background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg');
+            background-size: cover;
+            background-position: center;
             border-radius: 2rem;
             padding: 4rem 2rem;
             margin-top: 3rem;
             text-align: center;
-            border: 3px solid var(--text);
-            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            position: relative;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+            border-radius: 2rem;
+        }
+
+        .about-section > * {
+            position: relative;
+            z-index: 2;
         }
 
         .about-section h2 {
@@ -136,7 +153,7 @@
             font-size: 3.2rem;
             color: var(--text);
             margin-bottom: 2rem;
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .about-section p {
@@ -150,8 +167,28 @@
         }
 
         .tokenomics-section {
+            background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg');
+            background-size: cover;
+            background-position: center;
             padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+        }
+
+        .tokenomics-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+        }
+
+        .tokenomics-section > * {
+            position: relative;
+            z-index: 2;
         }
 
         .tokenomics-section h2 {
@@ -159,7 +196,7 @@
             font-size: 3.2rem;
             color: var(--text);
             margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .tokenomics-card {
@@ -171,12 +208,6 @@
             min-width: 300px;
             border: 3px solid var(--text);
             box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .tokenomics-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
         }
 
         .tokenomics-card h3 {
@@ -194,12 +225,30 @@
         }
 
         .how-to-buy {
-            background: var(--card-bg);
+            background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg');
+            background-size: cover;
+            background-position: center;
             border-radius: 2rem;
             padding: 3rem 2rem;
             margin-top: 3rem;
-            border: 3px solid var(--text);
-            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+            position: relative;
+        }
+
+        .how-to-buy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1;
+            border-radius: 2rem;
+        }
+
+        .how-to-buy > * {
+            position: relative;
+            z-index: 2;
         }
 
         .how-to-buy h2 {
@@ -208,7 +257,7 @@
             text-align: center;
             margin-bottom: 2rem;
             color: var(--text);
-            text-shadow: 3px 3px 0px rgba(66, 32, 6, 0.15);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .steps-container {
@@ -223,23 +272,18 @@
             border-radius: 1rem;
             padding: 1.5rem;
             border: 3px solid var(--text);
-            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
             transition: transform 0.3s ease;
+            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
         }
 
         .step-card:hover {
             transform: translateY(-5px);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
         }
 
         .step-card h3 {
             font-family: var(--heading-font);
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        .step-card p {
             color: var(--text);
         }
 
@@ -256,13 +300,12 @@
             padding: 2rem;
             text-align: center;
             border: 3px solid var(--text);
-            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
             transition: transform 0.3s ease;
+            box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.2);
         }
 
         .feature-card h3 {
@@ -279,15 +322,13 @@
             color: white;
             border-radius: 2rem 2rem 0 0;
             margin-top: 3rem;
-            border: 3px solid var(--text);
-            border-bottom: none;
         }
 
         .social-proof h2 {
             font-family: var(--heading-font);
             font-size: 3.2rem;
             margin-bottom: 2rem;
-            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .image-grid {
@@ -337,7 +378,6 @@
             padding: 2rem;
             text-align: center;
             font-size: 0.9rem;
-            border-top: 3px solid var(--text);
         }
 
         .disclaimer {
