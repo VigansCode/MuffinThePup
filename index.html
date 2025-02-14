@@ -620,23 +620,26 @@ body {
     
         // First, let's verify the images are loading
         window.addEventListener('scroll', () => {
-    const height = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
-    const scrollPercent = (scrolled / height) * 100;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = (scrolled / height) * 100;
     
     const bg1 = document.querySelector('.background-section-1');
     const bg2 = document.querySelector('.background-section-2');
     const bg3 = document.querySelector('.background-section-3');
 
-    bg1.style.opacity = '0';
-    bg2.style.opacity = '0';
-    bg3.style.opacity = '0';
-
-    if (scrollPercent < 33) {
-        bg1.style.opacity = '1';
-    } else if (scrollPercent < 66) {
-        bg2.style.opacity = '1';
+    // Create overlapping transition zones
+    if (percentage < 40) {
+        bg1.style.opacity = 1 - (percentage / 40);  // Gradually fade out
+        bg2.style.opacity = percentage / 40;        // Gradually fade in
+        bg3.style.opacity = '0';
+    } else if (percentage < 80) {
+        bg1.style.opacity = '0';
+        bg2.style.opacity = 1 - ((percentage - 40) / 40);  // Gradually fade out
+        bg3.style.opacity = (percentage - 40) / 40;        // Gradually fade in
     } else {
+        bg1.style.opacity = '0';
+        bg2.style.opacity = '0';
         bg3.style.opacity = '1';
     }
 });
