@@ -81,17 +81,17 @@
 }
 
 .background-section-1 {
-    background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg');
+    background-image: url('backgrounds/background1.jpg');
     opacity: 1;
 }
 
 .background-section-2 {
-    background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg');
+    background-image: url('backgrounds/background2.jpg');
     opacity: 0;
 }
 
 .background-section-3 {
-    background-image: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg');
+    background-image: url('backgrounds/background3.jpg');
     opacity: 0;
 }
 
@@ -626,9 +626,9 @@ body {
             const bg2 = new Image();
             const bg3 = new Image();
             
-            bg1.src = 'https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg';
-            bg2.src = 'https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg';
-            bg3.src = 'https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg';
+            bg1.src = 'backgrounds/background1.jpg';
+            bg2.src = 'backgrounds/background2.jpg';
+            bg3.src = 'backgrounds/background3.jpg';
             
             [bg1, bg2, bg3].forEach((img, index) => {
                 img.onload = () => console.log(`Background ${index + 1} loaded successfully`);
