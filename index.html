@@ -65,10 +65,43 @@
             z-index: -1;
         }
 
+        .background-section-1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background1.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -3;
+        }
+
+        .background-section-2 {
+            position: fixed;
+            top: 100vh;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -3;
+        }
+
+        .background-section-3 {
+            position: fixed;
+            top: 200vh;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -3;
+        }
+
         body {
             color: var(--text);
             line-height: 1.6;
-            min-height: 100vh;
+            min-height: 300vh;
             position: relative;
         }
 
@@ -159,8 +192,6 @@
         }
 
         .about-section {
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg') no-repeat center;
-            background-size: cover;
             border-radius: 2rem;
             padding: 4rem 2rem;
             margin-top: 3rem;
@@ -205,8 +236,6 @@
         }
 
         .tokenomics-section {
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background2.jpg') no-repeat center;
-            background-size: cover;
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
@@ -267,8 +296,6 @@
         }
 
         .how-to-buy {
-            background: url('https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/backgrounds/background3.jpg') no-repeat center;
-            background-size: cover;
             border-radius: 2rem;
             padding: 3rem 2rem;
             margin-top: 3rem;
@@ -463,6 +490,9 @@
     <div class="background-wrapper">
         <div class="background-image"></div>
     </div>
+    <div class="background-section-1"></div>
+    <div class="background-section-2"></div>
+    <div class="background-section-3"></div>
     <div class="background-overlay"></div>
     <div class="container">
         <header class="header">
