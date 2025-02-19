@@ -524,13 +524,35 @@ body {
     padding: 2rem;
     text-align: center;
     border: 3px solid var(--text);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
     backdrop-filter: blur(10px);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.25);
+}
+
+.cta-button {
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 2rem;
+    border: 3px solid #2B9C72;
+    box-shadow: 4px 4px 0px #2B9C72;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 6px 6px 0px #2B9C72;
 }
 
 .feature-card h3 {
