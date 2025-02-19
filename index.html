@@ -460,31 +460,6 @@ body {
     line-height: 1.6;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.slider-container {
-    background: white;
-    border-radius: 1rem;
-    padding: 1rem 0;
-}
-
-.slider-track {
-    width: fit-content;
-}
-
-.slider-track img {
-    border-radius: 1rem;
-    object-fit: cover;
-    border: 3px solid var(--text);
-}
-
 @media (max-width: 768px) {
     .header h1 {
         font-size: 3.5rem;
@@ -535,18 +510,17 @@ body {
             Your browser does not support the video tag.
         </video>
 
-        <section class="social-proof" style="background: #FFFFFF; color: var(--text); border-radius: 2rem;">
-            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/lovedbymillions.png" alt="Loved By Millions" style="width: 400px; height: auto; display: block; margin: 0 auto;">
-            <div class="slider-container" style="overflow: hidden; width: 100%; position: relative; margin: 2rem 0;">
-                <div class="slider-track" style="display: flex; animation: slide 20s linear infinite;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
-                </div>
+        <section class="about-section">
+            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/aboutmuffin.png" alt="About Muffin" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+            <div style="margin: 2rem 0;">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Public/muffin.png" alt="Muffin the Pup" style="width: 300px; height: 300px; border-radius: 1rem; object-fit: contain;">
             </div>
+            <p style="max-width: 600px; margin: 0 auto;">
+                In a quiet little town where the ovens are always warm and the air smells like fresh-baked treats, 
+                there lives a small, chubby pup named Muffin. With soft, golden fur like a freshly baked roll and 
+                big, round eyes that sparkle like sugar crystals, Muffin is the town's official taste tester of 
+                all things delicious!
+            </p>
         </section>
 
         <section class="tokenomics-section">
