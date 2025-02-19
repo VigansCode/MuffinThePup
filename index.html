@@ -68,20 +68,20 @@
 .image-with-frame {
     position: relative;
     padding: 15px;
-    margin: 25px;
+    margin: 25px 40px;  /* Increased side margins from 25px to 40px */
     background: var(--secondary);
     border-radius: 16px;
-    transition: transform 0.3s ease;  /* Add transition for smooth effect */
+    transition: transform 0.3s ease;
 }
 
 /* Add hover effect */
 .image-with-frame:hover {
-    transform: rotate(-8deg);  /* Increased from -5deg to -8deg */
+    transform: rotate(-8deg);
 }
 
 /* Make alternating images tilt the other way */
 .image-with-frame:nth-child(even):hover {
-    transform: rotate(8deg);  /* Increased from 5deg to 8deg */
+    transform: rotate(8deg);
 }
 
 .image-with-frame::before {
