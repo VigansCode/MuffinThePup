@@ -460,6 +460,15 @@ body {
     line-height: 1.6;
 }
 
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 @media (max-width: 768px) {
     .header h1 {
         font-size: 3.5rem;
@@ -570,16 +579,18 @@ body {
 
         <section class="social-proof" style="background: #FFFFFF; color: var(--text); border-radius: 2rem;">
             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/lovedbymillions.png" alt="Loved By Millions" style="width: 400px; height: auto; display: block; margin: 0 auto;">
-            <div class="image-grid">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
-                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
+            <div class="slider-container" style="overflow: hidden; width: 100%; position: relative; margin: 2rem 0;">
+                <div class="slider-track" style="display: flex; animation: slide 20s linear infinite;">
+                    <!-- Original images -->
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6" style="min-width: 200px; height: 200px; margin: 0 1rem;">
+                </div>
             </div>
         </section>
-    </div>
 
     <footer class="footer">
         <div class="social-icons">
