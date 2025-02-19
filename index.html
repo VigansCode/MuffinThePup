@@ -495,12 +495,38 @@ body {
     line-height: 1.6;
 }
 
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(200px * 18); /* Adjust based on number of images including duplicates */
+    animation: slide 30s linear infinite;
+}
+
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+.slider-track img {
+    width: 200px;
+    height: 200px;
+    margin: 0 1.5rem;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-200px * 6 - 3rem * 6));  /* Just move by the width of one complete set */
+        transform: translateX(calc(-200px * 9)); /* Half of the total width */
     }
 }
 
@@ -620,26 +646,29 @@ body {
 
         <section class="social-proof" style="background: #FFFFFF; color: var(--text); border-radius: 2rem;">
             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/lovedbymillions.png" alt="Loved By Millions" style="width: 400px; height: auto; display: block; margin: 0 auto;">
-            <div class="slider-container" style="overflow: hidden; width: 100%; position: relative; margin: 2rem 0;">
-                <div class="slider-track" style="display: flex; animation: slide 5s linear infinite;">
-                    <!-- Original set -->
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <!-- Second set -->
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <!-- Third set (partial, just first few images) -->
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
-                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6" style="min-width: 200px; height: 200px; margin: 0 1.5rem;">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- First set of images -->
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
                 </div>
             </div>
         </section>
