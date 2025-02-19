@@ -269,7 +269,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     transform: rotate(-5deg);
     border: 2px solid #FFD700;
     box-shadow: 3px 3px 0 rgba(139, 69, 19, 0.5);
@@ -284,31 +284,18 @@ body {
 }
 
 .social-icon:hover {
-    transform: scale(1.1) rotate(355deg);  /* Full rotation minus 5deg */
+    transform: scale(1.2) rotate(-8deg);
+    box-shadow: 5px 5px 0 rgba(139, 69, 19, 0.5);
 }
 
 .social-icon:nth-child(2):hover {
-    transform: scale(1.1) rotate(365deg);  /* Full rotation plus 5deg */
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 5px 5px 0 rgba(139, 69, 19, 0.5);
 }
 
 .social-icon:nth-child(3):hover {
-    transform: scale(1.1) rotate(355deg);  /* Full rotation minus 5deg */
-}
-
-.social-icon:hover {
-    transform: scale(1.1) rotate(-5deg);
-}
-
-.social-icon:nth-child(2):hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.social-icon:nth-child(3):hover {
-    transform: scale(1.1) rotate(-5deg);
-}
-
-.social-icon:last-child:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.2) rotate(-8deg);
+    box-shadow: 5px 5px 0 rgba(139, 69, 19, 0.5);
 }
 
 .stats-container {
