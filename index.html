@@ -65,6 +65,80 @@
     z-index: -1;
 }
 
+.image-with-frame {
+    position: relative;
+    padding: 15px;
+    margin: 25px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Leafy border decoration */
+.leafy-border {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.leafy-border::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4F7A6A;  /* Your site's green color */
+    border-radius: 24px;
+    clip-path: path('M 50 0 C 60 10, 80 15, 100 15 C 120 15, 140 10, 150 0 C 160 10, 180 15, 200 15 C 220 15, 240 10, 250 0 V 100 C 240 90, 220 85, 200 85 C 180 85, 160 90, 150 100 C 140 90, 120 85, 100 85 C 80 85, 60 90, 50 100 Z');
+}
+
+/* Bush decorations at corners */
+.bush-decoration {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #34D399;  /* Your accent green */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.bush-decoration::before,
+.bush-decoration::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #4F7A6A;  /* Your secondary green */
+    border-radius: 50%;
+}
+
+.bush-decoration::before {
+    top: -10px;
+    left: -10px;
+}
+
+.bush-decoration::after {
+    bottom: -10px;
+    right: -10px;
+}
+
+/* Position bushes */
+.top-left-bush { top: -20px; left: -20px; transform: rotate(-45deg); }
+.top-right-bush { top: -20px; right: -20px; transform: rotate(45deg); }
+.bottom-left-bush { bottom: -20px; left: -20px; transform: rotate(-135deg); }
+.bottom-right-bush { bottom: -20px; right: -20px; transform: rotate(135deg); }
+
+.image-container {
+    position: relative;
+    z-index: 1;
+    background: #FFF;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
 .background-section-1,
 .background-section-2,
 .background-section-3 {
@@ -458,68 +532,6 @@ body {
     transform: scale(1.05);
 }
 
-.image-with-frame {
-    position: relative;
-    padding: 20px;
-    margin: 30px;
-    border-radius: 24px;
-    background: #FFFFFF;
-}
-
-.image-with-frame::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    background: #8B4513;
-    border-radius: 28px;
-    z-index: -1;
-}
-
-/* Paw prints decoration */
-.image-with-frame::after {
-    content: '🐾';
-    position: absolute;
-    font-size: 24px;
-    top: -20px;
-    right: -10px;
-    transform: rotate(45deg);
-}
-
-/* Add bone decorations at corners */
-.corner-decoration {
-    position: absolute;
-    width: 40px;
-    height: 20px;
-    background: #FFD700;
-    border-radius: 10px;
-}
-
-.corner-decoration::before,
-.corner-decoration::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background: #FFD700;
-    border-radius: 50%;
-}
-
-/* Position corners */
-.top-left { transform: rotate(-45deg); top: -10px; left: -10px; }
-.top-right { transform: rotate(45deg); top: -10px; right: -10px; }
-.bottom-left { transform: rotate(-135deg); bottom: -10px; left: -10px; }
-.bottom-right { transform: rotate(135deg); bottom: -10px; right: -10px; }
-
-/* The container that will hold the image */
-.image-container {
-    background: #FFF;
-    padding: 10px;
-    border-radius: 20px;
-}
-
 .cta-button {
     background: var(--accent);
     color: white;
@@ -712,82 +724,91 @@ body {
                 <div class="slider-track">
                     <!-- First set of images -->
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
                         </div>
@@ -795,82 +816,91 @@ body {
                     
                     <!-- Duplicate set for seamless loop -->
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
                         </div>
                     </div>
                     <div class="image-with-frame">
-                        <div class="corner-decoration top-left"></div>
-                        <div class="corner-decoration top-right"></div>
-                        <div class="corner-decoration bottom-left"></div>
-                        <div class="corner-decoration bottom-right"></div>
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
                         <div class="image-container">
                             <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
                         </div>
