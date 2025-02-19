@@ -71,6 +71,17 @@
     margin: 25px;
     background: var(--secondary);
     border-radius: 16px;
+    transition: transform 0.3s ease;  /* Add transition for smooth effect */
+}
+
+/* Add hover effect */
+.image-with-frame:hover {
+    transform: rotate(-5deg);  /* Tilt slightly to the left */
+}
+
+/* Make alternating images tilt the other way */
+.image-with-frame:nth-child(even):hover {
+    transform: rotate(5deg);  /* Tilt slightly to the right */
 }
 
 .image-with-frame::before {
