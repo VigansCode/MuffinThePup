@@ -1388,24 +1388,69 @@ body {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script>
-        // Initialize GSAP ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Stat cards animation
-        gsap.from(".stat-card", {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".stats-container",
-                start: "top center"
-            }
+// Initialize GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Stat cards animation
+gsap.from(".stat-card", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".stats-container",
+        start: "top center"
+    }
+});
+
+// Add contract address copy functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const contractAddress = document.querySelector('.tokenomics-card p:nth-of-type(2)');
+    if (contractAddress) {
+        contractAddress.style.cursor = 'pointer';
+        contractAddress.title = 'Click to copy';
+        contractAddress.addEventListener('click', function() {
+            const text = this.textContent;
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    // Optional: Show temporary feedback
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 1000);
+                })
+                .catch(err => {
+                    // Fallback for older browsers
+                    const textArea = document.createElement("textarea");
+                    textArea.value = text;
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-999999px";
+                    textArea.style.top = "-999999px";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        const originalText = contractAddress.textContent;
+                        contractAddress.textContent = 'Copied!';
+                        setTimeout(() => {
+                            contractAddress.textContent = originalText;
+                        }, 1000);
+                    } catch (err) {
+                        console.error('Could not copy text: ', err);
+                    }
+                    
+                    document.body.removeChild(textArea);
+                });
         });
-    
-        // First, let's verify the images are loading
-        window.addEventListener('scroll', () => {
+    }
+});
+
+// First, let's verify the images are loading
+window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const percentage = (scrolled / height) * 100;
@@ -1431,37 +1476,37 @@ body {
         bg3.style.opacity = '1';
     }
 });
+
+// Modified scroll listener with logging
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = (scrolled / height) * 100;
     
-        // Modified scroll listener with logging
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            const height = document.documentElement.scrollHeight - window.innerHeight;
-            const percentage = (scrolled / height) * 100;
-            
-            console.log('Scroll percentage:', percentage);
-    
-            const bg1 = document.querySelector('.background-section-1');
-            const bg2 = document.querySelector('.background-section-2');
-            const bg3 = document.querySelector('.background-section-3');
-    
-            // Add logging for opacity changes
-            if (percentage < 33) {
-                bg1.style.opacity = '1';
-                bg2.style.opacity = '0';
-                bg3.style.opacity = '0';
-                console.log('Section 1 visible');
-            } else if (percentage < 66) {
-                bg1.style.opacity = '0';
-                bg2.style.opacity = '1';
-                bg3.style.opacity = '0';
-                console.log('Section 2 visible');
-            } else {
-                bg1.style.opacity = '0';
-                bg2.style.opacity = '0';
-                bg3.style.opacity = '1';
-                console.log('Section 3 visible');
-            }
-        });
+    console.log('Scroll percentage:', percentage);
+
+    const bg1 = document.querySelector('.background-section-1');
+    const bg2 = document.querySelector('.background-section-2');
+    const bg3 = document.querySelector('.background-section-3');
+
+    // Add logging for opacity changes
+    if (percentage < 33) {
+        bg1.style.opacity = '1';
+        bg2.style.opacity = '0';
+        bg3.style.opacity = '0';
+        console.log('Section 1 visible');
+    } else if (percentage < 66) {
+        bg1.style.opacity = '0';
+        bg2.style.opacity = '1';
+        bg3.style.opacity = '0';
+        console.log('Section 2 visible');
+    } else {
+        bg1.style.opacity = '0';
+        bg2.style.opacity = '0';
+        bg3.style.opacity = '1';
+        console.log('Section 3 visible');
+    }
+});
     </script>
     </body>
 </html>
