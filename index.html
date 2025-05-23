@@ -289,47 +289,71 @@
 
         /* Contract Address Styles */
         .contract-address-section {
-          background: #FFFFFF;
-          border: 3px solid #422006;
-          border-radius: 1rem;
-          padding: 1rem 2rem;
-          margin: 1rem auto;
-          max-width: 600px;
+          background: linear-gradient(135deg, #8B4513, #A0522D);
+          border: 4px solid #FFD700;
+          border-radius: 1.5rem;
+          padding: 1.5rem 2rem;
+          margin: 1.5rem auto;
+          max-width: 500px;
           text-align: center;
-          box-shadow: 4px 4px 0px rgba(66, 32, 6, 0.2);
+          box-shadow: 6px 6px 0px #4F7A6A, 8px 8px 15px rgba(0,0,0,0.2);
           transition: all 0.3s ease;
+          transform: rotate(-1deg);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .contract-address-section::before {
+          content: '🪙💰🐕';
+          position: absolute;
+          top: -10px;
+          right: -20px;
+          font-size: 2rem;
+          opacity: 0.3;
+          transform: rotate(15deg);
         }
 
         .contract-address-section:hover {
-          transform: translateY(-2px);
-          box-shadow: 6px 6px 0px rgba(66, 32, 6, 0.25);
+          transform: rotate(1deg) translateY(-3px);
+          box-shadow: 8px 8px 0px #4F7A6A, 12px 12px 20px rgba(0,0,0,0.25);
+          border-color: #FF8FB1;
         }
 
         .contract-label {
           font-family: 'Baloo 2', cursive;
-          font-size: 1.2rem;
-          color: #422006;
-          margin-bottom: 0.5rem;
+          font-size: 1.4rem;
+          color: #FFD700;
+          margin-bottom: 0.8rem;
           font-weight: 600;
+          text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+          position: relative;
+          z-index: 2;
         }
 
         .contract-address {
           font-family: 'Courier New', monospace;
-          font-size: 1rem;
-          color: #666;
-          background: #f8f8f8;
-          padding: 0.5rem 1rem;
-          border-radius: 0.5rem;
-          border: 2px solid #ddd;
+          font-size: 1.1rem;
+          color: #FFFFFF;
+          background: rgba(255, 255, 255, 0.15);
+          padding: 0.8rem 1.2rem;
+          border-radius: 1rem;
+          border: 3px solid #FFD700;
           cursor: pointer;
           transition: all 0.3s ease;
           word-break: break-all;
+          backdrop-filter: blur(5px);
+          position: relative;
+          z-index: 2;
+          font-weight: bold;
+          text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
         }
 
         .contract-address:hover {
-          background: #e8f5e8;
-          border-color: #34D399;
-          color: #2d5a2d;
+          background: rgba(255, 215, 0, 0.2);
+          border-color: #FF8FB1;
+          color: #FFFACD;
+          transform: scale(1.02);
+          box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
         }
 
 @font-face {
@@ -341,67 +365,6 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poppins:wght@400;500&display=swap');
-
-.muffin-description {
-    max-width: 600px;
-    margin: 2rem auto;
-    font-family: 'Poppins', sans-serif;
-    color: #422006;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.muffin-title {
-    font-family: 'Baloo 2', cursive;
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-    text-align: center;
-    line-height: 1.3;
-}
-
-.muffin-paragraph {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.muffin-section-title {
-    font-family: 'Baloo 2', cursive;
-    font-size: 1.4rem;
-    margin: 2rem 0 1rem 0;
-    text-align: center;
-}
-
-.muffin-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto 2rem auto;
-    width: 80%;
-}
-
-.muffin-list-item {
-    padding-left: 1.75rem;
-    position: relative;
-    margin-bottom: 0.75rem;
-    text-align: center;
-}
-
-.muffin-list-item:before {
-    content: '♥';
-    position: absolute;
-    left: 0;
-    color: #FF8FB1; /* Light pink heart */
-}
-
-.muffin-tagline {
-    font-family: 'Baloo 2', cursive;
-    font-size: 1.25rem;
-    text-align: center;
-    margin-top: 2rem;
-}
 
 :root {
     --primary: #FFE4E6;
@@ -928,558 +891,510 @@ body {
     transform: scale(1.05);
 }
 
-.cta-button {
-    background: var(--accent);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 2rem;
-   text-decoration: none;
-   font-weight: bold;
-   font-size: 1.2rem;
-   display: inline-block;
-   margin-top: 2rem;
-   border: 3px solid #2B9C72;
-   box-shadow: 4px 4px 0px #2B9C72;
-   cursor: pointer;
-   transition: all 0.2s ease;
-}
-
-.cta-button:hover {
-   transform: translate(2px, 2px);
-   box-shadow: 2px 2px 0px #2B9C72;
-}
-
 .footer {
-   background: var(--secondary);
-   color: white;
-   padding: 2rem;
-   text-align: center;
-   font-size: 0.9rem;
+    background: var(--secondary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 .disclaimer {
-   max-width: 800px;
-   margin: 2rem auto;
-   font-size: 0.9rem;
-   opacity: 0.8;
-   line-height: 1.6;
+    max-width: 800px;
+    margin: 2rem auto;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.6;
 }
 
 .slider-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  margin: 0;  /* Removed all margin */
-  padding: 0;  /* Removed all padding */
+   overflow: hidden;
+   width: 100%;
+   position: relative;
+   margin: 0;  /* Removed all margin */
+   padding: 0;  /* Removed all padding */
 }
 
 .slider-track {
-   display: flex;
-   width: calc(200px * 18); /* Adjust based on number of images including duplicates */
-   animation: slide 10s linear infinite;
+    display: flex;
+    width: calc(200px * 18); /* Adjust based on number of images including duplicates */
+    animation: slide 10s linear infinite;
 }
 
 .slider-track:hover {
 }
 
 .slider-track img {
-   border: 4px solid #422006;
-   border-radius: 1rem;
-   box-shadow: 
-       4px 4px 0 #FFD700,
-       8px 8px 0 rgba(66, 32, 6, 0.2);
-   transform: rotate(-2deg);
+    border: 4px solid #422006;
+    border-radius: 1rem;
+    box-shadow: 
+        4px 4px 0 #FFD700,
+        8px 8px 0 rgba(66, 32, 6, 0.2);
+    transform: rotate(-2deg);
 }
 
 @keyframes slide {
-   0% {
-       transform: translateX(0);
-   }
-   100% {
-       transform: translateX(calc(-200px * 9)); /* Half of the total width */
-   }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 9)); /* Half of the total width */
+    }
 }
 
 @media (max-width: 768px) {
-   .header h1 {
-       font-size: 3.5rem;
-   }
-   
-   .stats-container {
-       flex-direction: column;
-       align-items: center;
-   }
-   
-   .stat-card {
-       width: 100%;
-   }
-   
-   .steps-container {
-       grid-template-columns: 1fr;
-   }
-   
-   .about-section h2,
-   .how-to-buy h2,
-   .social-proof h2 {
-       font-size: 2.8rem;
-   }
+    .header h1 {
+        font-size: 3.5rem;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-card {
+        width: 100%;
+    }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-section h2,
+    .how-to-buy h2,
+    .social-proof h2 {
+        font-size: 2.8rem;
+    }
 }
-   </style>
+    </style>
 </head>
 <body>
-   <div class="background-wrapper">
-       <div class="background-image"></div>
-   </div>
-   <div class="background-section-1"></div>
-   <div class="background-section-2"></div>
-   <div class="background-section-3"></div>
-   <div class="background-overlay"></div>
-   <div class="container">
-       <header class="header">
-           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/muffinthepup.png" alt="Muffin The Pup" style="width: 550px; height: auto; display: block; margin: 0 auto;">
-           <div class="social-icons">
-               <a href="https://x.com" target="_blank" class="social-icon">
-                   <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/x.svg" alt="X (Twitter)" style="width: 60px; height: 60px;">
-               </a>
-               <a href="https://pump.fun" target="_blank" class="social-icon">
-                   <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/pump.svg" alt="Pump.fun" style="width: 60px; height: 60px;">
-               </a>
-               <a href="https://dexscreener.com" target="_blank" class="social-icon">
-                   <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/dex.svg" alt="Dexscreener" style="width: 60px; height: 60px;">
-               </a>
-           </div>
-           
-           <!-- Contract Address Section - Added here -->
-           <div class="contract-address-section">
-               <div class="contract-label">Contract Address:</div>
-               <div class="contract-address" onclick="copyToClipboard(this)" title="Click to copy">0x123...abc</div>
-           </div>
-       </header>
+    <div class="background-wrapper">
+        <div class="background-image"></div>
+    </div>
+    <div class="background-section-1"></div>
+    <div class="background-section-2"></div>
+    <div class="background-section-3"></div>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header class="header">
+            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/muffinthepup.png" alt="Muffin The Pup" style="width: 550px; height: auto; display: block; margin: 0 auto;">
+            <div class="social-icons">
+                <a href="https://x.com" target="_blank" class="social-icon">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/x.svg" alt="X (Twitter)" style="width: 60px; height: 60px;">
+                </a>
+                <a href="https://pump.fun" target="_blank" class="social-icon">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/pump.svg" alt="Pump.fun" style="width: 60px; height: 60px;">
+                </a>
+                <a href="https://dexscreener.com" target="_blank" class="social-icon">
+                    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/dex.svg" alt="Dexscreener" style="width: 60px; height: 60px;">
+                </a>
+            </div>
+            
+            <!-- Contract Address Section - Added here -->
+            <div class="contract-address-section">
+                <div class="contract-label">Contract Address:</div>
+                <div class="contract-address" onclick="copyToClipboard(this)" title="Click to copy">0x123...abc</div>
+            </div>
+        </header>
 
-       <video style="width: 450px; height: 450px; border-radius: 1rem; margin: 2rem auto; display: block;" controls>
-           <source src="https://res.cloudinary.com/dpogkjjow/video/upload/v1739891366/Untitled_video_-_Made_with_Clipchamp_7_glog0x.mp4" type="video/mp4">
-           Your browser does not support the video tag.
-       </video>
+        <video style="width: 450px; height: 450px; border-radius: 1rem; margin: 2rem auto; display: block;" controls>
+            <source src="https://res.cloudinary.com/dpogkjjow/video/upload/v1739891366/Untitled_video_-_Made_with_Clipchamp_7_glog0x.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 <section class="about-section">
-   <!-- Animated title image -->
-   <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/aboutmuffin.png" alt="About Muffin" class="about-muffin-title">
-   
-   <!-- Floating coins for memecoin feel -->
-   <div class="muffin-coin">💰</div>
-   <div class="muffin-coin">🪙</div>
-   
-   <!-- Enhanced Muffin image with decorations -->
-   <div class="muffin-image-container">
-       <!-- Sparkle decorations -->
-       <div class="sparkle">✨</div>
-       <div class="sparkle">✨</div>
-       <div class="sparkle">✨</div>
-       <div class="sparkle">✨</div>
-       
-       <!-- Paw prints -->
-       <div class="paw-print">🐾</div>
-       <div class="paw-print">🐾</div>
-       
-       <!-- Muffin image -->
-       <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Public/muffin.png" alt="Muffin the Pup" class="muffin-image">
-   </div>
-   
-   <div class="muffin-description">
-       <!-- Decorative background elements -->
-       <div class="muffin-decoration">🦴</div>
-       <div class="muffin-decoration">🐶</div>
-       
-       <h2 class="muffin-title">Meet Muffin - the chubby golden pup with sunshine in her smile! 🌞</h2>
-       
-       <p class="muffin-paragraph">
-           This treat-loving fluffball brings joy to everyone lucky enough to meet her. <span style="font-size: 1.4rem; color: #FF6B6B;">❤️</span>
-       </p>
-       
-       <p class="muffin-paragraph">
-           With twinkling eyes and paws that dance when excited, Muffin makes every day feel like a celebration! <span style="font-size: 1.4rem;">🎉</span>
-       </p>
-       
-       <h3 class="muffin-section-title">Muffin's World:</h3>
-       
-       <ul class="muffin-list">
-           <li class="muffin-list-item">A wagging tail for every friend</li>
-           <li class="muffin-list-item">Playful adventures that warm your heart</li>
-           <li class="muffin-list-item">Spreading sweetness one paw print at a time</li>
-       </ul>
-       
-       <p class="muffin-tagline">
-           <span style="font-size: 1.3rem;">💰</span> $MUFFIN: Because life's better with a little extra fluff! <span style="font-size: 1.3rem;">🚀</span>
-       </p>
-   </div>
+    <!-- Animated title image -->
+    <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/aboutmuffin.png" alt="About Muffin" class="about-muffin-title">
+    
+    <!-- Floating coins for memecoin feel -->
+    <div class="muffin-coin">💰</div>
+    <div class="muffin-coin">🪙</div>
+    
+    <!-- Enhanced Muffin image with decorations -->
+    <div class="muffin-image-container">
+        <!-- Sparkle decorations -->
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        
+        <!-- Paw prints -->
+        <div class="paw-print">🐾</div>
+        <div class="paw-print">🐾</div>
+        
+        <!-- Muffin image -->
+        <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Public/muffin.png" alt="Muffin the Pup" class="muffin-image">
+    </div>
+    
+    <div class="muffin-description">
+        <!-- Decorative background elements -->
+        <div class="muffin-decoration">🦴</div>
+        <div class="muffin-decoration">🐶</div>
+        
+        <h2 class="muffin-title">Meet Muffin - the chubby golden pup with sunshine in her smile! 🌞</h2>
+        
+        <p class="muffin-paragraph">
+            This treat-loving fluffball brings joy to everyone lucky enough to meet her. <span style="font-size: 1.4rem; color: #FF6B6B;">❤️</span>
+        </p>
+        
+        <p class="muffin-paragraph">
+            With twinkling eyes and paws that dance when excited, Muffin makes every day feel like a celebration! <span style="font-size: 1.4rem;">🎉</span>
+        </p>
+        
+        <h3 class="muffin-section-title">Muffin's World:</h3>
+        
+        <ul class="muffin-list">
+            <li class="muffin-list-item">A wagging tail for every friend</li>
+            <li class="muffin-list-item">Playful adventures that warm your heart</li>
+            <li class="muffin-list-item">Spreading sweetness one paw print at a time</li>
+        </ul>
+        
+        <p class="muffin-tagline">
+            <span style="font-size: 1.3rem;">💰</span> $MUFFIN: Because life's better with a little extra fluff! <span style="font-size: 1.3rem;">🚀</span>
+        </p>
+    </div>
 </section>
 
-       <section class="how-to-buy">
-           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/howtobuy.png" alt="How To Buy" style="width: 400px; height: auto; display: block; margin: 0 auto;">
-           <div class="steps-container">
-               <div class="step-card">
-                   <h3>1) Create a Wallet</h3>
-                   <p>Download Phantom Wallet and create an account</p>
-               </div>
-               <div class="step-card">
-                   <h3>2) Get Some SOL</h3>
-                   <p>Buy SOL from your favorite exchange</p>
-               </div>
-               <div class="step-card">
-                   <h3>3) Swap for $MUFFIN</h3>
-                   <p>Use Jupiter or Raydium to swap SOL for $MUFFIN</p>
-               </div>
-               <div class="step-card">
-                   <h3>4) Welcome to the Bakery!</h3>
-                   <p>You're now part of Muffin's sweet family!</p>
-               </div>
-           </div>
-       </section>
+        <section class="how-to-buy">
+            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/howtobuy.png" alt="How To Buy" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3>1) Create a Wallet</h3>
+                    <p>Download Phantom Wallet and create an account</p>
+                </div>
+                <div class="step-card">
+                    <h3>2) Get Some SOL</h3>
+                    <p>Buy SOL from your favorite exchange</p>
+                </div>
+                <div class="step-card">
+                    <h3>3) Swap for $MUFFIN</h3>
+                    <p>Use Jupiter or Raydium to swap SOL for $MUFFIN</p>
+                </div>
+                <div class="step-card">
+                    <h3>4) Welcome to the Bakery!</h3>
+                    <p>You're now part of Muffin's sweet family!</p>
+                </div>
+            </div>
+        </section>
 
-       <section class="coming-soon" style="max-width: 100%; display: flex; justify-content: center;">
-           <div class="feature-card" style="width: 600px; padding: 2rem;">
-               <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/comingsoon.png" alt="Coming Soon" style="width: 450px; height: auto; display: block; margin: 0 auto -0.5rem;">
-               <p style="margin-top: 0;">Something sweet is baking!</p>
-               <video style="width: 450px; height: auto; margin: 2rem auto; display: block; border-radius: 1rem;" autoplay loop muted playsinline>
-                   <source src="https://res.cloudinary.com/do48jszgn/video/upload/v1739904799/polbenxtxh06clyz0vfm.mp4" type="video/mp4">
-                   Your browser does not support the video tag.
-               </video>
-               <button class="cta-button" style="margin-top: 1rem;">Coming Soon!</button>
-           </div>
-       </section>
+        <section class="coming-soon" style="max-width: 100%; display: flex; justify-content: center;">
+            <div class="feature-card" style="width: 600px; padding: 2rem;">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/comingsoon.png" alt="Coming Soon" style="width: 450px; height: auto; display: block; margin: 0 auto -0.5rem;">
+                <p style="margin-top: 0;">Something sweet is baking!</p>
+                <video style="width: 450px; height: auto; margin: 2rem auto; display: block; border-radius: 1rem;" autoplay loop muted playsinline>
+                    <source src="https://res.cloudinary.com/do48jszgn/video/upload/v1739904799/polbenxtxh06clyz0vfm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cta-button" style="margin-top: 1rem;">Coming Soon!</button>
+            </div>
+        </section>
 
-       <section class="social-proof" style="background: #FFFFFF; color: var(--text); border-radius: 2rem;">
-           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/lovedbymillions.png" alt="Loved By Millions" style="width: 400px; height: auto; display: block; margin: 0 auto;">
-           <div class="slider-container">
-               <div class="slider-track">
-                   <!-- First set of images -->
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
-                       </div>
-                   </div>
-                   
-                   <!-- Duplicate set for seamless loop -->
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
-                       </div>
-                   </div>
-                   <div class="image-with-frame">
-                       <div class="leafy-border"></div>
-                       <div class="bush-decoration top-left-bush"></div>
-                       <div class="bush-decoration top-right-bush"></div>
-                       <div class="bush-decoration bottom-left-bush"></div>
-                       <div class="bush-decoration bottom-right-bush"></div>
-                       <div class="image-container">
-                           <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </section>
+        <section class="social-proof" style="background: #FFFFFF; color: var(--text); border-radius: 2rem;">
+            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/Fonts/lovedbymillions.png" alt="Loved By Millions" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- First set of images -->
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin1.png" alt="Muffin 1">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin2.png" alt="Muffin 2">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin3.png" alt="Muffin 3">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin4.png" alt="Muffin 4">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin5.png" alt="Muffin 5">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin6.png" alt="Muffin 6">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin7.png" alt="Muffin 7">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin8.png" alt="Muffin 8">
+                        </div>
+                    </div>
+                    <div class="image-with-frame">
+                        <div class="leafy-border"></div>
+                        <div class="bush-decoration top-left-bush"></div>
+                        <div class="bush-decoration top-right-bush"></div>
+                        <div class="bush-decoration bottom-left-bush"></div>
+                        <div class="bush-decoration bottom-right-bush"></div>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/social%20proof/muffin9.png" alt="Muffin 9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-   <footer class="footer">
-       <div class="social-icons">
-           <a href="https://x.com" target="_blank" class="social-icon">
-               <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/x.svg" alt="X (Twitter)" style="width: 60px; height: 60px;">
-           </a>
-           <a href="https://pump.fun" target="_blank" class="social-icon">
-               <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/pump.svg" alt="Pump.fun" style="width: 60px; height: 60px;">
-           </a>
-           <a href="https://dexscreener.com" target="_blank" class="social-icon">
-               <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/dex.svg" alt="Dexscreener" style="width: 60px; height: 60px;">
-           </a>
-       </div>
-       <div class="disclaimer">
-           All information presented by the $MUFFIN token on its website and/or related social media platforms 
-           is not affiliated with, endorsed, or supported by any entity. This token is a community-driven meme token 
-           for entertainment purposes only.
-       </div>
-   </footer>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://x.com" target="_blank" class="social-icon">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/x.svg" alt="X (Twitter)" style="width: 60px; height: 60px;">
+            </a>
+            <a href="https://pump.fun" target="_blank" class="social-icon">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/pump.svg" alt="Pump.fun" style="width: 60px; height: 60px;">
+            </a>
+            <a href="https://dexscreener.com" target="_blank" class="social-icon">
+                <img src="https://raw.githubusercontent.com/VigansCode/MuffinThePup/main/icons/dex.svg" alt="Dexscreener" style="width: 60px; height: 60px;">
+            </a>
+        </div>
+        <div class="disclaimer">
+            All information presented by the $MUFFIN token on its website and/or related social media platforms 
+            is not affiliated with, endorsed, or supported by any entity. This token is a community-driven meme token 
+            for entertainment purposes only.
+        </div>
+    </footer>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
-   <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <script>
 // Initialize GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 // Stat cards animation
 gsap.from(".stat-card", {
-   y: 50,
-   opacity: 0,
-   duration: 1,
-   stagger: 0.2,
-   ease: "power2.out",
-   scrollTrigger: {
-       trigger: ".stats-container",
-       start: "top center"
-   }
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".stats-container",
+        start: "top center"
+    }
 });
 
 // Copy to clipboard function for contract address
 function copyToClipboard(element) {
-   const text = element.textContent;
-   navigator.clipboard.writeText(text)
-       .then(() => {
-           // Show temporary feedback
-           const originalText = element.textContent;
-           element.textContent = 'Copied!';
-           element.style.background = '#d4edda';
-           element.style.color = '#155724';
-           setTimeout(() => {
-               element.textContent = originalText;
-               element.style.background = '#f8f8f8';
-               element.style.color = '#666';
-           }, 1500);
-       })
-       .catch(err => {
-           // Fallback for older browsers
-           const textArea = document.createElement("textarea");
-           textArea.value = text;
-           textArea.style.position = "fixed";
-           textArea.style.left = "-999999px";
-           textArea.style.top = "-999999px";
-           document.body.appendChild(textArea);
-           textArea.focus();
-           textArea.select();
-           
-           try {
-               document.execCommand('copy');
-               const originalText = element.textContent;
-               element.textContent = 'Copied!';
-               element.style.background = '#d4edda';
-               element.style.color = '#155724';
-               setTimeout(() => {
-                   element.textContent = originalText;
-                   element.style.background = '#f8f8f8';
-                   element.style.color = '#666';
-               }, 1500);
-           } catch (err) {
-               console.error('Could not copy text: ', err);
-           }
-           
-           document.body.removeChild(textArea);
-       });
+    const text = element.textContent;
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            // Show temporary feedback
+            const originalText = element.textContent;
+            element.textContent = 'Copied!';
+            element.style.background = 'rgba(52, 211, 153, 0.3)';
+            element.style.color = '#FFFACD';
+            element.style.borderColor = '#34D399';
+            setTimeout(() => {
+                element.textContent = originalText;
+                element.style.background = 'rgba(255, 255, 255, 0.15)';
+                element.style.color = '#FFFFFF';
+                element.style.borderColor = '#FFD700';
+            }, 1500);
+        })
+        .catch(err => {
+            // Fallback for older browsers
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                const originalText = element.textContent;
+                element.textContent = 'Copied!';
+                element.style.background = 'rgba(52, 211, 153, 0.3)';
+                element.style.color = '#FFFACD';
+                element.style.borderColor = '#34D399';
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.style.background = 'rgba(255, 255, 255, 0.15)';
+                    element.style.color = '#FFFFFF';
+                    element.style.borderColor = '#FFD700';
+                }, 1500);
+            } catch (err) {
+                console.error('Could not copy text: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        });
 }
 
-// First, let's verify the images are loading
+// Background transition effects
 window.addEventListener('scroll', () => {
-   const scrolled = window.scrollY;
-   const height = document.documentElement.scrollHeight - window.innerHeight;
-   const percentage = (scrolled / height) * 100;
-   
-   const bg1 = document.querySelector('.background-section-1');
-   const bg2 = document.querySelector('.background-section-2');
-   const bg3 = document.querySelector('.background-section-3');
+    const scrolled = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = (scrolled / height) * 100;
+    
+    const bg1 = document.querySelector('.background-section-1');
+    const bg2 = document.querySelector('.background-section-2');
+    const bg3 = document.querySelector('.background-section-3');
 
-   // Create wider overlapping transition zones
-   if (percentage < 50) {
-       // Slower fade for first transition
-       bg1.style.opacity = Math.cos((percentage / 50) * (Math.PI / 2)); // Cosine function for smoother fade
-       bg2.style.opacity = Math.sin((percentage / 50) * (Math.PI / 2)); // Sine function for smoother fade
-       bg3.style.opacity = '0';
-   } else if (percentage < 100) {
-       // Slower fade for second transition
-       bg1.style.opacity = '0';
-       bg2.style.opacity = Math.cos(((percentage - 50) / 50) * (Math.PI / 2));
-       bg3.style.opacity = Math.sin(((percentage - 50) / 50) * (Math.PI / 2));
-   } else {
-       bg1.style.opacity = '0';
-       bg2.style.opacity = '0';
-       bg3.style.opacity = '1';
-   }
+    // Create wider overlapping transition zones
+    if (percentage < 50) {
+        // Slower fade for first transition
+        bg1.style.opacity = Math.cos((percentage / 50) * (Math.PI / 2)); // Cosine function for smoother fade
+        bg2.style.opacity = Math.sin((percentage / 50) * (Math.PI / 2)); // Sine function for smoother fade
+        bg3.style.opacity = '0';
+    } else if (percentage < 100) {
+        // Slower fade for second transition
+        bg1.style.opacity = '0';
+        bg2.style.opacity = Math.cos(((percentage - 50) / 50) * (Math.PI / 2));
+        bg3.style.opacity = Math.sin(((percentage - 50) / 50) * (Math.PI / 2));
+    } else {
+        bg1.style.opacity = '0';
+        bg2.style.opacity = '0';
+        bg3.style.opacity = '1';
+    }
 });
-
-// Modified scroll listener with logging
-window.addEventListener('scroll', () => {
-   const scrolled = window.scrollY;
-   const height = document.documentElement.scrollHeight - window.innerHeight;
-   const percentage = (scrolled / height) * 100;
-   
-   console.log('Scroll percentage:', percentage);
-
-   const bg1 = document.querySelector('.background-section-1');
-   const bg2 = document.querySelector('.background-section-2');
-   const bg3 = document.querySelector('.background-section-3');
-
-   // Add logging for opacity changes
-   if (percentage < 33) {
-       bg1.style.opacity = '1';
-       bg2.style.opacity = '0';
-       bg3.style.opacity = '0';
-       console.log('Section 1 visible');
-   } else if (percentage < 66) {
-       bg1.style.opacity = '0';
-       bg2.style.opacity = '1';
-       bg3.style.opacity = '0';
-       console.log('Section 2 visible');
-   } else {
-       bg1.style.opacity = '0';
-       bg2.style.opacity = '0';
-       bg3.style.opacity = '1';
-       console.log('Section 3 visible');
-   }
-});
-   </script>
-   </body>
+    </script>
+    </body>
 </html>
